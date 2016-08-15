@@ -377,16 +377,7 @@ public class Set extends org.python.types.Object {
         __doc__ = ""
     )
     public org.python.Object intersection(org.python.Object other) {
-        if (other instanceof org.python.types.Set) {
-            java.util.Set<org.python.Object> intersection = new java.util.HashSet<org.python.Object>();
-            intersection.retainAll(((Set) other).value);
-            return new org.python.types.Set(intersection);
-        }
-
-        throw new org.python.exceptions.TypeError(
-                String.format("'%s' is not iterable",
-                        org.Python.typeName(other.getClass())));
-
+        throw new org.python.exceptions.NotImplementedError("intersection() has not been implemented.");
     }
 
     @org.python.Method(
